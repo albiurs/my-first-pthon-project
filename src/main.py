@@ -2,32 +2,54 @@
 import tkinter as tk
 
 
-# Function to be called when Hello World button is pressed
+def create_button(root, text, command):
+    """
+    Create a button widget and pack it into the given root window.
+
+    :param root: The root window where the button will be placed.
+    :type root: tk.Tk
+    :param text: The text to be displayed on the button.
+    :type text: str
+    :param command: The command to be executed when the button is clicked.
+    :type command: function
+    :return: None
+    """
+    button = tk.Button(root, text=text, padx=20, pady=20, command=command)
+    button.pack(padx=20, pady=20)
+
+
 def hello_world():
+    """
+    Prints "Hello, World!" to the console.
+
+    :return: None
+    """
     print("Hello, World!")
+    pass
 
 
-# Function to be called when Hello Earth button is pressed
 def hello_earth():
+    """
+    Prints "Hello, Earth!" to the console.
+
+    :return: None
+    """
     print("Hello, Earth!")
+    pass
 
 
-# Main function where all the code resides
 def main():
-    # Initialize a window for the tkinter GUI
+    """
+    Entry point of the program.
+
+    Creates a Tkinter root window and two buttons with their respective callback functions.
+    Starts the Tkinter event loop.
+
+    :return: None
+    """
     root = tk.Tk()
-
-    # Create a Button with the text "Hello, World!" and link it to hello_world function
-    button_world = tk.Button(root, text="Hello, World!", padx=20, pady=20, command=hello_world)
-    # Place the button on the window using pack()
-    button_world.pack(padx=20, pady=20)
-
-    # Create a Button with the text "Hello, Earth!" and link it to hello_earth function
-    button_earth = tk.Button(root, text="Hello, Earth!", padx=20, pady=20, command=hello_earth)
-    # Place the button on the window using pack()
-    button_earth.pack(padx=20, pady=20)
-
-    # Start the main event loop for GUI
+    create_button(root, "Hello, World!", hello_world)
+    create_button(root, "Hello, Earth!", hello_earth)
     root.mainloop()
 
 
