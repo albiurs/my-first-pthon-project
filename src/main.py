@@ -1,7 +1,6 @@
 # Import the tkinter module for GUI
 import tkinter as tk
-
-import tkinter as tk
+from MyClass import MyClass
 
 
 def create_button(root, text, command):
@@ -57,8 +56,15 @@ def main():
     root.mainloop()
 
 
-if __name__ == "__main__":
-    main()
+# Instantiate the class
+my_instance = MyClass()
+
+# Access class attribute
+print(my_instance.attribute)
+
+# Call class method
+my_instance.my_method("Hello Urs")
+
 
 # Check if the script is running directly or being imported
 if __name__ == "__main__":
